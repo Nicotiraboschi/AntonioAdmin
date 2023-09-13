@@ -1,28 +1,21 @@
-"use client"
+"use client";
 
-import { Modal } from "@/components/ui/modal"
-import { useStoreModal } from "@/hooks/use-store-modal"
-import { useEffect } from "react"
+import { useEffect } from "react";
+import { useParams } from "next/navigation";
+
+import { useStoreModal } from "@/hooks/use-store-modal";
 
 const SetupPage = () => {
-  const onOpen = useStoreModal((state) => state.onOpen)
-  const isOpen = useStoreModal((state) => state.isOpen)
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
 
   useEffect(() => {
-    if(!isOpen) {
-      onOpen()
+    if (!isOpen) {
+      onOpen();
     }
-  }, [isOpen, onOpen])
+  }, [isOpen, onOpen]);
 
-  /* return (
-    <div className="p-4">
-      <Modal title="Test Title" description="Test Description" isOpen onClose={() => {}}>
-        Children
-      </Modal>
-    </div>
-  ) */
-  return null
-}
-
-export default SetupPage
-
+  return null;
+};
+ 
+export default SetupPage;

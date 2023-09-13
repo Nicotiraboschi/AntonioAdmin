@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
+
 import { Modal } from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
 
@@ -17,14 +18,14 @@ export const AlertModal: React.FC<AlertModalProps> = ({
   onConfirm,
   loading
 }) => {
-  const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    setIsMounted(true);
+  }, []);
 
   if (!isMounted) {
-    return null
+    return null;
   }
 
   return (
@@ -38,10 +39,8 @@ export const AlertModal: React.FC<AlertModalProps> = ({
         <Button disabled={loading} variant="outline" onClick={onClose}>
           Cancel
         </Button>
-        <Button disabled={loading} variant="destructive" onClick={onConfirm} >
-          Continue
-        </Button>
-      </div>  
+        <Button disabled={loading} variant="destructive" onClick={onConfirm}>Continue</Button>
+      </div>
     </Modal>
-  )
-}
+  );
+};
